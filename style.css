@@ -1,0 +1,227 @@
+:root {
+    --dark-bg-color: #333333;
+    --dark-font-color: #fff;
+    --link-light-color: #8E44AD;
+    --link-dark-color: #CE93D8;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Estilos básicos */
+
+html {
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style-type: none;
+    padding: .2rem;
+}
+
+button {
+    background-color: unset;
+}
+
+a {
+    text-decoration: none; 
+    color: inherit;         
+    text-align: center;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+a:hover {
+    font-weight: 700;
+    opacity: 0.6;
+    background-color: rgba(0, 0, 0, 0.3); /* Um leve fundo cinza no light mode */
+}
+
+section {
+    min-height: 100vh;
+    text-align: left;
+    padding-top: 100px; /* Para compensar a navbar fixada, foi o jeito que encontrei*/
+}
+
+section h1 {
+    text-align: center;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+section p {
+    padding: .5rem;
+    word-wrap: break-word;
+    margin: 0 .5rem 0 .5rem;
+}
+
+section a {
+    color: var(--link-light-color);
+}
+
+/*
+Classes com dark mode
+*/
+body.dark-mode { 
+    background-color: var(--dark-bg-color); 
+    color: var(--dark-font-color); 
+}
+
+body.dark-mode section a { color: var(--link-dark-color); }
+
+body.dark-mode .navbar, body.dark-mode .main-menu {
+    background-color: var(--dark-bg-color);
+}
+
+body.dark-mode .main-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode #meuFormulario input,
+body.dark-mode #meuFormulario textarea {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-font-color);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    width: 100vw;
+    padding: .5rem;
+    position: fixed;
+}
+
+.btn-tema, .btn-mobile {
+    background: none;
+    border: none;
+    padding: .5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-tema img, .btn-mobile img {
+    width: 2rem;
+    height: 2rem;
+}
+
+
+.btn-tema:hover, .btn-mobile:hover {
+    opacity: 0.7;           /* Deixa um pouco mais claro no clique */
+    transition: opacity 0.2s;
+}
+
+
+.main-menu {
+    display: none; /* Esconde enquanto estiver no mobile*/
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Aparece logo abaixo da navbar */
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.2)
+}
+
+/* Classe ativada pelo javascript*/
+.main-menu.active {
+    display: flex;
+}
+
+.main-menu li {
+    width: 100%;
+    display: flex;
+}
+
+.main-menu a {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+}
+
+
+#formacao ul {
+    padding: .5rem;
+    margin: 0 .5rem;
+}
+
+
+#contato {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto; /* Centraliza o formulário na seção */
+}
+
+#meuFormulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+#meuFormulario input, 
+#meuFormulario textarea {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box; /* Evita de quebrar a largura no mobile */
+    background-color: #fff;
+    color: #333;
+}
+
+#meuFormulario button {
+    padding: 1rem;
+    background-color: var(--link-light-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#meuFormulario button:hover {
+    background-color: var(--link-dark-color);
+}
+
+
+/* Correções pro desktop */
+@media (min-width: 768px) {
+
+    section {
+        max-width: 60vw;
+        margin: 0 auto;
+    }
+
+    .btn-mobile { display: none; } /* Esconde o menu mobile */
+    
+    .main-menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        box-shadow: none;
+        background: none;
+    }
+    #contato {
+        padding: 100px 0 0 0 ;
+    }
+
+    .main-menu li {
+        align-items: center;
+        min-width: fit-content
+    }
+}

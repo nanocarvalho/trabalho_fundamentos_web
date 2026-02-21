@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janderson Carvalho de Brito - Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonte Poppins do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Todos os icones foram tirados do site https://iconoir.com/ -->
+    <nav class="navbar">
+        <!-- Botão de troca do tema -->
+        <button id="themeToggle" class="btn-tema" onclick="alternarTema()"><img id="themeToggleImg" src="/imgs/sun-light.svg" alt="Tema claro"></button>
+
+        <!-- Botão do menu no Mobile -->
+        <button id="menuMobile" class="btn-mobile" onclick="toggleMenu()"><img id="menuMobileImg" src="/imgs/menu-dark.svg" alt="Menu"></button>
+
+        <ul class="main-menu" id="mainMenu">
+            <li><a href="#sobre" onclick="toggleMenu()">Sobre mim</a></li>
+            <li><a href="#formacao" onclick="toggleMenu()">Formação</a></li>
+            <li><a href="#portfolio" onclick="toggleMenu()">Portfólio</a></li>
+            <li><a href="#contato" onclick="toggleMenu()">Contato</a></li>
+        </ul>
+    </nav>
+
+    <section id="sobre">
+        <h1>Sobre Mim</h1>
+        <p>Olá, meu nome é Janderson Carvalho de brito!</p>
+        <p>Meus principais hobbies hoje em dia são: Jogar, com bastante foco em jogo antigo e raramente algo recente, e estudar sobre gamedev, que é a área que mais me encontrei dentro da tecnologia. Ficar tentando entender a lógica por trás de mecânicas diferentes e quebrar a cabeça tentando implementar elas por conta própria é divertido!</p>
+        <p>Mas por hora, sou um mero aprendiz sempre em busca de conhecimento.</p>
+
+    </section>
+
+    <section id="formacao">
+        <h1>Formação</h1>
+        <ul>
+            <li>&bull; Curso superior em andamento: Análise e Desenvolvimento de Sistemas</li>
+            <li>&bull; Inglês Intermediário</li>
+            <li>&bull; Informática Intermediária</li>
+        </ul>
+    </section>
+
+    <section id="portfolio">
+        <h1>Portfólio</h1>
+        <p>Confira meus projetos no <a rel="noreferrer" target="_blank" href="https://github.com/nanocarvalho">GitHub</a>.</p>
+        <p>Confira minhas aventuras com Gamedev no <a rel="noreferrer" target="_blank" href="https://itsnanoc.itch.io/">Itch.io</a>.</p>
+    </section>
+
+    <section id="contato">
+        <h1>Contato</h1>
+        <form id="meuFormulario">
+            <input type="text" id="nome" placeholder="Seu Nome" required>
+            <input type="email" id="email" placeholder="Seu E-mail" required>
+            <textarea id="mensagem" placeholder="Sua Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
